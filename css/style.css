@@ -194,6 +194,54 @@ section{ padding:100px 24px; max-width:880px; margin:0 auto; position:relative; 
   background:rgba(255,255,255,0.02);
 }
 
+/* ---------- TIMELINE ---------- */
+.timeline{
+  margin-top:34px; padding-left:4px;
+  display:flex; flex-direction:column; gap:26px; position:relative;
+}
+.timeline::before{
+  content:''; position:absolute; left:5px; top:6px; bottom:6px; width:1px;
+  background:linear-gradient(var(--emerald), var(--cyan) 60%, transparent);
+  opacity:.35;
+}
+.tl-item{ display:flex; gap:18px; position:relative; }
+.tl-dot{
+  flex:0 0 auto; width:11px; height:11px; border-radius:50%; margin-top:5px;
+  background:var(--bg-0); border:2px solid var(--emerald); box-shadow:0 0 10px rgba(0,255,136,.5);
+  position:relative; z-index:1;
+}
+.tl-content{ min-width:0; }
+.tl-year{
+  display:block; font-family:'Space Mono', monospace; font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--cyan); margin-bottom:4px;
+}
+.tl-content p{ margin:0; font-size:14.5px; line-height:1.6; color:var(--text-lo); max-width:460px; }
+
+/* ---------- NOW / AHORA MISMO ---------- */
+.now{ padding-top:40px; padding-bottom:40px; }
+.now-status{ display:flex; align-items:center; gap:8px; margin:-8px 0 22px; }
+.now-dot{
+  width:7px; height:7px; border-radius:50%; background:var(--emerald); flex:0 0 auto;
+  box-shadow:0 0 8px rgba(0,255,136,.8); animation:nowPulse 1.8s ease-in-out infinite;
+}
+@keyframes nowPulse{ 0%,100%{ opacity:1; transform:scale(1); } 50%{ opacity:.4; transform:scale(.7); } }
+.now-live{
+  display:flex; align-items:center; gap:8px; font-family:'Space Mono', monospace;
+  font-size:11px; letter-spacing:.1em; color:var(--text-lo); text-transform:uppercase;
+}
+.now-grid{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+@media (max-width:560px){ .now-grid{ grid-template-columns:1fr; } }
+.now-item{
+  display:flex; align-items:center; gap:12px; padding:14px 16px; border-radius:14px;
+  border:1px solid var(--line); background:rgba(255,255,255,0.015);
+}
+.now-ico{ font-size:20px; flex:0 0 auto; line-height:1; }
+.now-label{
+  display:block; font-family:'Space Mono', monospace; font-size:10px; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--text-lo); margin-bottom:2px;
+}
+.now-value{ display:block; font-size:14.5px; font-weight:600; color:var(--text-hi); }
+
 /* ---------- FICHA ---------- */
 .card-wrap{ padding:20px 24px 100px; position:relative; z-index:1; }
 .ficha{
