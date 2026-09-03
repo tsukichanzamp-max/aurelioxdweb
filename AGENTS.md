@@ -16,6 +16,13 @@ Sitio estático de una sola página, sin build step ni framework. Netlify sirve 
 - El reproductor de música (`.player`) es arrastrable vía mouse/touch y su posición se ajusta con `left/top` en JS; evita volver a `position: fixed` con `bottom/right` salvo en el estado inicial.
 - La lista de reproducción (`PLAYLIST` en `js/main.js`) referencia archivos en `assets/audio/`. Para añadir más canciones: colocar el `.mp3` en esa carpeta y agregar un objeto `{ title, artist, src }` al arreglo.
 
+## Secciones añadidas (fase 1 de mejoras)
+
+- `.timeline` dentro de `.bio` — línea de tiempo personal (2023 → Universidad → Gaming → Hoy), puramente CSS con `::before` como línea vertical.
+- `section.now` — bloque "Ahora mismo" entre la bio y la ficha de jugador, grid de 4 items (`.now-item`) editables a mano en `index.html`. No hay backend: actualizar el texto manualmente cuando cambie.
+- `assets/img/favicon.svg` — favicon simple (monograma "A") con el gradiente `--emerald`→`--cyan`.
+- Metadatos Open Graph/Twitter Card añadidos al `<head>` para que los links compartidos muestren preview.
+
 ## Decisiones no obvias
 
 - El personaje "chibi inspirado en Kinich" en el hero es un SVG original hecho a medida (paleta ámbar/dorado, motivo de dinosaurio), no arte oficial de Genshin Impact, para evitar el uso de material con derechos de autor sin licencia.
